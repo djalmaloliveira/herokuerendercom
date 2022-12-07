@@ -1,15 +1,15 @@
-from flask import Flask
+import flask
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
-
-@app.get('/')
+@app.route('/')
 def index():
-    return 'app renderizado'
+    return '<h1>Ola, Mundo3</h1>'\
 
-@app.get('/inscrito/<nome_inscrito>')
-def inscrito(nome_inscrito):
-    return f"Olá {nome_inscrito}"
+@app.route('/usuario')
+def usuario():
+    return '<h1>Você usuário seja bem vindo</h1>'
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/teste')
+def teste():
+    return '<h1>Pagina teste</h1>'
